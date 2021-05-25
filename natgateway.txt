@@ -1,0 +1,14 @@
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIA5HTFWR2F4UWLTAU6"
+  secret_key = "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"
+}
+
+resource "aws_nat_gateway" "testnat" {
+  allocation_id = "nat-020316a0b57a35d95"
+  subnet_id     = "subnet-0dda1087cf5d6345e"
+
+  tags = {
+    Name = "testnat"
+  }
+}
