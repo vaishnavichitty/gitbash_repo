@@ -1,0 +1,19 @@
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIA5HTFWR2F4UWLTAU6"
+  secret_key = "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"
+}
+
+resource "aws_internet_gateway" "myIGW" {
+  vpc_id = "vpc-07d65469fc29bf8d4"
+
+  tags = {
+    Name = "myIGW"
+  }
+}
+
+# - Create Elastic IP
+
+resource "aws_eip" "eip" {
+    vpc = true
+}
