@@ -1,0 +1,5 @@
+resource "aws_s3_bucket" "b" {
+  bucket = "mybucketcloud8"
+  acl    = "public-read"
+  policy = file("policy.json")
+}
